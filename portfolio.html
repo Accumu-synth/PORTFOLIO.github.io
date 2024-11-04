@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ACCUMSAN PORTFOLIO</title>
+    <style>
+        /* 기본 다크 모드 */
+        body {
+            background-color: #1e1e1e;
+            color: #ffffff;
+            transition: background-color 0.3s, color 0.3s;
+            font-family: Arial, sans-serif;
+            padding: 20px;
+            margin: 0;
+            min-height: 100vh;
+        }
+
+        /* 화이트 모드 스타일 */
+        body.dark-mode {
+            background-color: #ffffff;
+            color: #1e1e1e;
+        }
+
+        /* 버튼 컨테이너 상단 고정 */
+        .button-container {
+            position: fixed;
+            top: 10px;
+            right: 10px;
+            display: flex;
+            gap: 10px;
+        }
+
+        .animated-button {
+            padding: 10px 15px;
+            font-size: 16px;
+            color: #ffffff;
+            background-color: #1e1e1e;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+
+        .animated-button:hover {
+            background-color: #505050;
+            transform: scale(1.1);
+        }
+
+        .ripple-button {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .ripple-button .ripple {
+            position: absolute;
+            border-radius: 50%;
+            background-color: rgba(255, 255, 255, 0.6);
+            transform: scale(0);
+            animation: ripple 0.6s linear;
+        }
+
+        @keyframes ripple {
+            to {
+                transform: scale(4);
+                opacity: 0;
+            }
+        }
+
+        /* 콘텐츠 레이아웃 설정 */
+        .content {
+            position: absolute;
+            top: 200px; /* 원하는 px 단위로 조정 */
+            left: 100px; /* 원하는 px 단위로 조정 */
+        }
+
+        h1 {
+            font-size: 2.5em;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <!-- 버튼을 상단에 고정 -->
+    <div class="button-container">
+        <button class="animated-button ripple-button" id="darkModeToggle">라이트 모드</button>
+        <button class="animated-button ripple-button" id="languageToggle">Korean</button>
+    </div>
+    
+    <!-- 메인 화면 -->
+    <div class="content">
+        <p id="title" style="font-size: 100px; margin-top: 180px; margin-left: 100px;">ACCUMSAN</p>
+        <p id="description" style="font-size: 20px; margin-top: 100px; margin-left: 100px;">Welcome to the ACCUMSAN portfolio. This page is responsive, with a toggleable dark and light mode. Adjust the size of your screen to see how it adapts!</p>
+    </div>
+    
+    <!-- 목차 -->
+    <div>
+        <p>목차</p>
+    </div>
+    <script>
+        // 한국어와 영어 텍스트 데이터
+        const translations = {
+            en: {
+                title: "ACCUMSAN",
+                description: "Welcome to the ACCUMSAN portfolio. This page is responsive, with a toggleable dark and light mode. Adjust the size of your screen to see how it adapts!",
+                buttonText: "Korean"
+            },
+            ko: {
+                title: "ACCUMSAN",
+                description: "ACCUMSAN 포트폴리오에 오신 것을 환영합니다. 이 페이지는 반응형으로, 다크 및 라이트 모드를 전환할 수 있습니다. 화면 크기에 따라 어떻게 조정되는지 확인해 보세요!",
+                buttonText: "English"
+            }
+        };
+
+        // 현재 언어 상태
+        let currentLanguage = 'en';
+
+        // 텍스트 요소 참조
+        const titleElement = document.getElementById("title");
+        const descriptionElement = document.getElementById("description");
+        const languageToggleButton = document.getElementById("languageToggle");
+        const darkModeToggle = document.getElementById("darkModeToggle");
+
+        // 언어 변경 함수
+        function toggleLanguage() {
+            currentLanguage = currentLanguage === 'en' ? 'ko' : 'en';
+            titleElement.innerText = translations[currentLanguage].title;
+            descriptionElement.innerText = translations[currentLanguage].description;
+            languageToggleButton.innerText = translations[currentLanguage].buttonText;
+        }
+
+        // 테마 변경 함수
+        function toggleDarkMode() {
+            document.body.classList.toggle('dark-mode');
+            // 다크 모드 상태에 따라 버튼 텍스트 변경
+            if (document.body.classList.contains('dark-mode')) {
+                darkModeToggle.innerText = "라이트 모드";
+            } else {
+                darkModeToggle.innerText = "다크 모드";
+            }
+        }
+
+        // 다크모드 토글 버튼에 이벤트 추가
+        darkModeToggle.addEventListener('click', toggleDarkMode);
+
+        // 언어 변경 버튼 클릭 시 언어 변경 함수 호출
+        languageToggleButton.addEventListener("click", toggleLanguage);
+
+        // Ripple 애니메이션 기능
+        document.querySelectorAll('.ripple-button').forEach(button => {
+            button.addEventListener('click', function (e) {
+                const ripple = document.createElement('span');
+                const rect = button.getBoundingClientRect();
+                ripple.style.width = ripple.style.height = Math.max(rect.width, rect.height) + 'px';
+                ripple.style.left = e.clientX - rect.left - (ripple.offsetWidth / 2) + 'px';
+                ripple.style.top = e.clientY - rect.top - (ripple.offsetHeight / 2) + 'px';
+                ripple.classList.add('ripple');
+                this.appendChild(ripple);
+
+                ripple.addEventListener('animationend', () => {
+                    ripple.remove();
+                });
+            });
+        });
+    </script>
+</body>
+</html>
