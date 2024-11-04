@@ -47,36 +47,86 @@
             transform: scale(1.1);
         }
 
-        .ripple-button {
-            position: relative;
-            overflow: hidden;
-        }
-
-        .ripple-button .ripple {
-            position: absolute;
-            border-radius: 50%;
-            background-color: rgba(255, 255, 255, 0.6);
-            transform: scale(0);
-            animation: ripple 0.6s linear;
-        }
-
-        @keyframes ripple {
-            to {
-                transform: scale(4);
-                opacity: 0;
-            }
-        }
-
         /* 콘텐츠 레이아웃 설정 */
         .content {
-            position: absolute;
-            top: 200px; /* 원하는 px 단위로 조정 */
-            left: 100px; /* 원하는 px 단위로 조정 */
+            margin-top: 80px;
+            text-align: center;
         }
 
-        h1 {
-            font-size: 2.5em;
+        #title {
+            font-size: 100px;
+            margin-top: 180px;
+        }
+
+        #description {
+            font-size: 20px;
+            margin-top: 40px;
+        }
+
+        /* 타임라인 다이어리 스타일 */
+        .timeline {
+            margin-top: 100px;
+            width: 80%;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .timeline h2 {
+            font-size: 36px;
+            text-align: center;
             margin-bottom: 20px;
+        }
+
+        .timeline-table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        .timeline-table th, .timeline-table td {
+            padding: 12px;
+            border: 1px solid #ddd;
+            text-align: left;
+        }
+
+        .timeline-table th {
+            background-color: #333;
+            color: #ffffff;
+        }
+
+        .timeline-table tr:nth-child(even) {
+            background-color: #2a2a2a;
+        }
+
+        .tag {
+            display: inline-block;
+            padding: 5px 10px;
+            border-radius: 4px;
+            font-size: 0.9em;
+        }
+
+        .tag.very-good {
+            background-color: #1e88e5;
+            color: white;
+        }
+
+        .tag.good {
+            background-color: #4caf50;
+            color: white;
+        }
+
+        .tag.not-bad {
+            background-color: #21fff4;
+            color: white;
+        }
+
+        .tag.not-good {
+            background-color: #ffa216;
+            color: white;
+        }
+
+        .tag.very-bad {
+            background-color: #e51e1e;
+            color: white;
         }
     </style>
 </head>
@@ -87,16 +137,42 @@
         <button class="animated-button ripple-button" id="languageToggle">Korean</button>
     </div>
     
-    <!-- 메인 화면 -->
+    <!-- 메인 콘텐츠 -->
     <div class="content">
-        <p id="title" style="font-size: 100px; margin-top: 180px; margin-left: 100px;">ACCUMSAN</p>
-        <p id="description" style="font-size: 20px; margin-top: 100px; margin-left: 100px;">Welcome to the ACCUMSAN portfolio. This page is responsive, with a toggleable dark and light mode. Adjust the size of your screen to see how it adapts!</p>
+        <p id="title">ACCUMSAN</p>
+        <p id="description">Welcome to the ACCUMSAN portfolio. This page is responsive, with a toggleable dark and light mode. Adjust the size of your screen to see how it adapts!</p>
     </div>
     
-    <!-- 목차 -->
-    <div>
-        <p>테스트</p>
+    <!-- 타임라인 다이어리 섹션 -->
+    <div class="timeline">
+        <h2>타임라인</h2>
+        <table class="timeline-table">
+            <thead>
+                <tr>
+                    <th>내용</th>
+                    <th>날짜</th>
+                    <th>성실함</th>
+                    <th>만족도</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>포트폴리오 사이트 기반, 업로드</td>
+                    <td>2024년 11월 5일</td>
+                    <td><span class="tag good">좋음</span></td>
+                    <td><span class="tag very-good">매우 좋음</span></td>
+                </tr>
+                <!-- 추가할 수 있는 다이어리 항목들 -->
+                <tr>
+                    <td>추가 작업 예시</td>
+                    <td>2024년 11월 6일</td>
+                    <td><span class="tag good">좋음</span></td>
+                    <td><span class="tag very-good">매우 좋음</span></td>
+                </tr>
+            </tbody>
+        </table>
     </div>
+
     <script>
         // 한국어와 영어 텍스트 데이터
         const translations = {
@@ -132,7 +208,6 @@
         // 테마 변경 함수
         function toggleDarkMode() {
             document.body.classList.toggle('dark-mode');
-            // 다크 모드 상태에 따라 버튼 텍스트 변경
             if (document.body.classList.contains('dark-mode')) {
                 darkModeToggle.innerText = "라이트 모드";
             } else {
@@ -145,23 +220,6 @@
 
         // 언어 변경 버튼 클릭 시 언어 변경 함수 호출
         languageToggleButton.addEventListener("click", toggleLanguage);
-
-        // Ripple 애니메이션 기능
-        document.querySelectorAll('.ripple-button').forEach(button => {
-            button.addEventListener('click', function (e) {
-                const ripple = document.createElement('span');
-                const rect = button.getBoundingClientRect();
-                ripple.style.width = ripple.style.height = Math.max(rect.width, rect.height) + 'px';
-                ripple.style.left = e.clientX - rect.left - (ripple.offsetWidth / 2) + 'px';
-                ripple.style.top = e.clientY - rect.top - (ripple.offsetHeight / 2) + 'px';
-                ripple.classList.add('ripple');
-                this.appendChild(ripple);
-
-                ripple.addEventListener('animationend', () => {
-                    ripple.remove();
-                });
-            });
-        });
     </script>
 </body>
 </html>
