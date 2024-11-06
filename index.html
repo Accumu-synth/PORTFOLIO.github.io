@@ -13,7 +13,15 @@
             font-family: Arial, sans-serif;
             padding: 20px;
             margin: 0;
+        }
+
+        .section{
             min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
         }
 
         /* 화이트 모드 스타일 */
@@ -138,39 +146,41 @@
     </div>
     
     <!-- 메인 콘텐츠 -->
-    <div class="content">
+    <div class="section">
         <p id="title">ACCUMSAN</p>
         <p id="description">Welcome to the ACCUMSAN portfolio. This page is responsive, with a toggleable dark and light mode. Adjust the size of your screen to see how it adapts!</p>
     </div>
     
     <!-- 타임라인 다이어리 섹션 -->
-    <div class="timeline">
-        <h2>타임라인</h2>
-        <table class="timeline-table">
-            <thead>
-                <tr>
-                    <th>내용</th>
-                    <th>날짜</th>
-                    <th>성실함</th>
-                    <th>만족도</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>포트폴리오 사이트 기반, 업로드</td>
-                    <td>2024년 11월 5일</td>
-                    <td><span class="tag good">좋음</span></td>
-                    <td><span class="tag very-good">매우 좋음</span></td>
-                </tr>
-                <!-- 추가할 수 있는 다이어리 항목들 -->
-                <tr>
-                    <td>추가 작업 예시</td>
-                    <td>2024년 11월 6일</td>
-                    <td><span class="tag good">좋음</span></td>
-                    <td><span class="tag very-good">매우 좋음</span></td>
-                </tr>
-            </tbody>
-        </table>
+     <div class="section">
+        <div class="timeline">
+            <h2>타임라인</h2>
+            <table class="timeline-table">
+                <thead>
+                    <tr>
+                        <th>내용</th>
+                        <th>날짜</th>
+                        <th>성실함</th>
+                        <th>만족도</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>포트폴리오 사이트 기반, 업로드</td>
+                        <td>2024년 11월 5일</td>
+                        <td><span class="tag good">좋음</span></td>
+                        <td><span class="tag very-good">매우 좋음</span></td>
+                    </tr>
+                    <!-- 추가할 수 있는 다이어리 항목들 -->
+                    <tr>
+                        <td>추가 작업 예시</td>
+                        <td>2024년 11월 6일</td>
+                        <td><span class="tag good">좋음</span></td>
+                        <td><span class="tag very-good">매우 좋음</span></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
     </div>
 
     <script>
