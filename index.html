@@ -9,13 +9,13 @@
         body {
             background-color: #1e1e1e;
             color: #ffffff;
-            transition: background-color 0.3s, color 0.3s;
+            transition: background-color 0.3s, color #ffffff;
             font-family: Arial, sans-serif;
             padding: 20px;
             margin: 0;
         }
 
-        .section{
+        .section {
             min-height: 100vh;
             display: flex;
             flex-direction: column;
@@ -63,7 +63,7 @@
 
         #title {
             font-size: 100px;
-            margin-top: 180px;
+            margin-top: 0px;
         }
 
         #description {
@@ -71,71 +71,69 @@
             margin-top: 40px;
         }
 
-        /* 타임라인 다이어리 스타일 */
-        .timeline {
-            margin-top: 100px;
+        /* 스킬 섹션 스타일 */
+        .skills {
             width: 80%;
-            margin-left: auto;
-            margin-right: auto;
+            margin: auto;
+            margin-top: 50px;
         }
 
-        .timeline h2 {
-            font-size: 36px;
+        .skills h2 {
             text-align: center;
+            font-size: 36px;
             margin-bottom: 20px;
         }
 
-        .timeline-table {
-            width: 100%;
-            border-collapse: collapse;
+        .skill-category {
+            margin-top: 30px;
         }
 
-        .timeline-table th, .timeline-table td {
-            padding: 12px;
-            border: 1px solid #ddd;
-            text-align: left;
+        .skill-category h3 {
+            font-size: 24px;
+            margin-bottom: 15px;
+            color: #ffcc00;
         }
 
-        .timeline-table th {
+        .skill-bar {
+            margin-bottom: 15px;
+        }
+
+        .skill-title {
+            font-size: 18px;
+            margin-bottom: 5px;
+        }
+
+        .bar-container {
             background-color: #333;
-            color: #ffffff;
+            border-radius: 5px;
+            overflow: hidden;
+            height: 25px;
         }
 
-        .timeline-table tr:nth-child(even) {
-            background-color: #2a2a2a;
-        }
-
-        .tag {
-            display: inline-block;
-            padding: 5px 10px;
-            border-radius: 4px;
-            font-size: 0.9em;
-        }
-
-        .tag.very-good {
-            background-color: #1e88e5;
+        .bar {
+            height: 100%;
+            text-align: right;
+            padding-right: 10px;
             color: white;
+            font-weight: bold;
+            line-height: 25px;
+            border-radius: 5px;
         }
 
-        .tag.good {
-            background-color: #4caf50;
-            color: white;
-        }
-
-        .tag.not-bad {
-            background-color: #21fff4;
-            color: white;
-        }
-
-        .tag.not-good {
-            background-color: #ffa216;
-            color: white;
-        }
-
-        .tag.very-bad {
-            background-color: #e51e1e;
-            color: white;
-        }
+        /* 스킬별 색상 */
+        .html { width: 90%; background-color: #e44d26; }
+        .css { width: 85%; background-color: #264de4; }
+        .javascript { width: 80%; background-color: #f0db4f; color: #333; }
+        .photoshop { width: 75%; background-color: #31a8ff; }
+        .illustrator { width: 70%; background-color: #ff9a00; }
+        .indesign { width: 65%; background-color: #ff3366; }
+        .premiere { width: 60%; background-color: #e535ab; }
+        .aftereffects { width: 75%; background-color: #9999ff; }
+        .blender { width: 70%; background-color: #f8a50c; }
+        .figma { width: 85%; background-color: #a259ff; }
+        .framer { width: 65%; background-color: #007acc; }
+        .protopie { width: 60%; background-color: #ff4d4d; }
+        .drone { width: 50%; background-color: #4caf50; }
     </style>
 </head>
 <body>
@@ -151,35 +149,114 @@
         <p id="description">Welcome to the ACCUMSAN portfolio. This page is responsive, with a toggleable dark and light mode. Adjust the size of your screen to see how it adapts!</p>
     </div>
     
-    <!-- 타임라인 다이어리 섹션 -->
-     <div class="section">
-        <div class="timeline">
-            <h2>타임라인</h2>
-            <table class="timeline-table">
-                <thead>
-                    <tr>
-                        <th>내용</th>
-                        <th>날짜</th>
-                        <th>성실함</th>
-                        <th>만족도</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>포트폴리오 사이트 기반, 업로드</td>
-                        <td>2024년 11월 5일</td>
-                        <td><span class="tag good">좋음</span></td>
-                        <td><span class="tag very-good">매우 좋음</span></td>
-                    </tr>
-                    <!-- 추가할 수 있는 다이어리 항목들 -->
-                    <tr>
-                        <td>추가 작업 예시</td>
-                        <td>2024년 11월 6일</td>
-                        <td><span class="tag good">좋음</span></td>
-                        <td><span class="tag very-good">매우 좋음</span></td>
-                    </tr>
-                </tbody>
-            </table>
+    <!-- 스킬 섹션 -->
+    <div class="section skills">
+        <h2>My Skills</h2>
+        
+        <!-- 코딩 언어 -->
+        <div class="skill-category">
+            <h3>코딩 언어</h3>
+            
+            <div class="skill-bar">
+                <div class="skill-title">HTML</div>
+                <div class="bar-container">
+                    <div class="bar html">90%</div>
+                </div>
+            </div>
+
+            <div class="skill-bar">
+                <div class="skill-title">CSS</div>
+                <div class="bar-container">
+                    <div class="bar css">85%</div>
+                </div>
+            </div>
+
+            <div class="skill-bar">
+                <div class="skill-title">JavaScript</div>
+                <div class="bar-container">
+                    <div class="bar javascript">80%</div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- 디자인 -->
+        <div class="skill-category">
+            <h3>디자인</h3>
+            
+            <div class="skill-bar">
+                <div class="skill-title">Photoshop</div>
+                <div class="bar-container">
+                    <div class="bar photoshop">75%</div>
+                </div>
+            </div>
+
+            <div class="skill-bar">
+                <div class="skill-title">Illustrator</div>
+                <div class="bar-container">
+                    <div class="bar illustrator">70%</div>
+                </div>
+            </div>
+
+            <div class="skill-bar">
+                <div class="skill-title">InDesign</div>
+                <div class="bar-container">
+                    <div class="bar indesign">65%</div>
+                </div>
+            </div>
+
+            <div class="skill-bar">
+                <div class="skill-title">Figma</div>
+                <div class="bar-container">
+                    <div class="bar figma">85%</div>
+                </div>
+            </div>
+
+            <div class="skill-bar">
+                <div class="skill-title">Framer</div>
+                <div class="bar-container">
+                    <div class="bar framer">65%</div>
+                </div>
+            </div>
+
+            <div class="skill-bar">
+                <div class="skill-title">ProtoPie</div>
+                <div class="bar-container">
+                    <div class="bar protopie">60%</div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- 영상 -->
+        <div class="skill-category">
+            <h3>영상</h3>
+            
+            <div class="skill-bar">
+                <div class="skill-title">Premiere Pro</div>
+                <div class="bar-container">
+                    <div class="bar premiere">60%</div>
+                </div>
+            </div>
+
+            <div class="skill-bar">
+                <div class="skill-title">After Effects</div>
+                <div class="bar-container">
+                    <div class="bar aftereffects">75%</div>
+                </div>
+            </div>
+
+            <div class="skill-bar">
+                <div class="skill-title">Blender</div>
+                <div class="bar-container">
+                    <div class="bar blender">70%</div>
+                </div>
+            </div>
+
+            <div class="skill-bar">
+                <div class="skill-title">드론 조종</div>
+                <div class="bar-container">
+                    <div class="bar drone">50%</div>
+                </div>
+            </div>
         </div>
     </div>
 
