@@ -6,17 +6,23 @@
     <title>ACCUMSYNTH PORTFOLIO</title>
     <style>
         /* 기본 다크 모드 */
+        html, body {
+            overflow: hidden;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+
         body {
             background-color: #1e1e1e;
             color: #ffffff;
             transition: background-color 0.3s, color #ffffff;
             font-family: Arial, sans-serif;
             padding: 20px;
-            margin: 0;
         }
 
         .section {
-            min-height: 100vh;
+            min-height: calc(100vh - 40px);
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -39,6 +45,27 @@
             gap: 10px;
         }
 
+        /* 왼쪽 상단 버튼 */
+        .top-left-button{
+            position: fixed;
+            top: 10px;
+            left: 10px;
+            padding: 10px 15px;
+            font-size: 16px;
+            color: #ffffff;
+            background-color: #1e1e1e;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+
+        .top-left-button:hover {
+            background-color: #505050;
+            transform: scale(1.1);
+        }
+        
+        /* 오른쪽 상단 버튼 */
         .animated-button {
             padding: 10px 15px;
             font-size: 16px;
@@ -120,6 +147,20 @@
             border-radius: 5px;
         }
 
+        .skills-container {
+        display: flex;
+        justify-content: space-around;
+        flex-wrap: wrap;
+        width: 100%;
+        margin-top: 50px;
+        }
+
+        .skill-category {
+            flex: 1;
+            min-width: 250px; /* 최소 너비 설정 */
+            margin: 20px;
+        }
+
         /* 스킬별 색상 */
         .html { width: 90%; background-color: #e44d26; }
         .css { width: 85%; background-color: #264de4; }
@@ -134,9 +175,13 @@
         .framer { width: 65%; background-color: #007acc; }
         .protopie { width: 60%; background-color: #ff4d4d; }
         .drone { width: 50%; background-color: #4caf50; }
+
     </style>
 </head>
-<body>
+<body> 
+     <!-- 왼쪽 상단에 스킬로 이동 버튼 추가 -->
+     <button class="top-left-button" onclick="scrollToSection('skills')">스킬로 이동</button>
+    
     <!-- 버튼을 상단에 고정 -->
     <div class="button-container">
         <button class="animated-button ripple-button" id="darkModeToggle">라이트 모드</button>
@@ -154,113 +199,119 @@
         <h2>My Skills</h2>
         
         <!-- 코딩 언어 -->
-        <div class="skill-category">
-            <h3>코딩 언어</h3>
+        <div class="skills-container">
+            <div class="skill-category">
+                <h3>코딩 언어</h3>
+                
+                <div class="skill-bar">
+                    <div class="skill-title">HTML</div>
+                    <div class="bar-container">
+                        <div class="bar html">90%</div>
+                    </div>
+                </div>
+
+                <div class="skill-bar">
+                    <div class="skill-title">CSS</div>
+                    <div class="bar-container">
+                        <div class="bar css">85%</div>
+                    </div>
+                </div>
+
+                <div class="skill-bar">
+                    <div class="skill-title">JavaScript</div>
+                    <div class="bar-container">
+                        <div class="bar javascript">80%</div>
+                    </div>
+                </div>
+            </div>
             
-            <div class="skill-bar">
-                <div class="skill-title">HTML</div>
-                <div class="bar-container">
-                    <div class="bar html">90%</div>
+            <!-- 디자인 -->
+            <div class="skill-category">
+                <h3>디자인</h3>
+                
+                <div class="skill-bar">
+                    <div class="skill-title">Photoshop</div>
+                    <div class="bar-container">
+                        <div class="bar photoshop">75%</div>
+                    </div>
                 </div>
-            </div>
 
-            <div class="skill-bar">
-                <div class="skill-title">CSS</div>
-                <div class="bar-container">
-                    <div class="bar css">85%</div>
+                <div class="skill-bar">
+                    <div class="skill-title">Illustrator</div>
+                    <div class="bar-container">
+                        <div class="bar illustrator">70%</div>
+                    </div>
                 </div>
-            </div>
 
-            <div class="skill-bar">
-                <div class="skill-title">JavaScript</div>
-                <div class="bar-container">
-                    <div class="bar javascript">80%</div>
+                <div class="skill-bar">
+                    <div class="skill-title">InDesign</div>
+                    <div class="bar-container">
+                        <div class="bar indesign">65%</div>
+                    </div>
+                </div>
+
+                <div class="skill-bar">
+                    <div class="skill-title">Figma</div>
+                    <div class="bar-container">
+                        <div class="bar figma">85%</div>
+                    </div>
+                </div>
+
+                <div class="skill-bar">
+                    <div class="skill-title">Framer</div>
+                    <div class="bar-container">
+                        <div class="bar framer">65%</div>
+                    </div>
+                </div>
+
+                <div class="skill-bar">
+                    <div class="skill-title">ProtoPie</div>
+                    <div class="bar-container">
+                        <div class="bar protopie">60%</div>
+                    </div>
                 </div>
             </div>
-        </div>
-        
-        <!-- 디자인 -->
-        <div class="skill-category">
-            <h3>디자인</h3>
             
-            <div class="skill-bar">
-                <div class="skill-title">Photoshop</div>
-                <div class="bar-container">
-                    <div class="bar photoshop">75%</div>
+            <!-- 영상 -->
+            <div class="skill-category">
+                <h3>영상</h3>
+                
+                <div class="skill-bar">
+                    <div class="skill-title">Premiere Pro</div>
+                    <div class="bar-container">
+                        <div class="bar premiere">60%</div>
+                    </div>
                 </div>
-            </div>
 
-            <div class="skill-bar">
-                <div class="skill-title">Illustrator</div>
-                <div class="bar-container">
-                    <div class="bar illustrator">70%</div>
+                <div class="skill-bar">
+                    <div class="skill-title">After Effects</div>
+                    <div class="bar-container">
+                        <div class="bar aftereffects">75%</div>
+                    </div>
                 </div>
-            </div>
 
-            <div class="skill-bar">
-                <div class="skill-title">InDesign</div>
-                <div class="bar-container">
-                    <div class="bar indesign">65%</div>
+                <div class="skill-bar">
+                    <div class="skill-title">Blender</div>
+                    <div class="bar-container">
+                        <div class="bar blender">70%</div>
+                    </div>
                 </div>
-            </div>
 
-            <div class="skill-bar">
-                <div class="skill-title">Figma</div>
-                <div class="bar-container">
-                    <div class="bar figma">85%</div>
+                <div class="skill-bar">
+                    <div class="skill-title">드론 조종</div>
+                    <div class="bar-container">
+                        <div class="bar drone">50%</div>
+                    </div>
                 </div>
             </div>
-
-            <div class="skill-bar">
-                <div class="skill-title">Framer</div>
-                <div class="bar-container">
-                    <div class="bar framer">65%</div>
-                </div>
-            </div>
-
-            <div class="skill-bar">
-                <div class="skill-title">ProtoPie</div>
-                <div class="bar-container">
-                    <div class="bar protopie">60%</div>
-                </div>
-            </div>
-        </div>
-        
-        <!-- 영상 -->
-        <div class="skill-category">
-            <h3>영상</h3>
-            
-            <div class="skill-bar">
-                <div class="skill-title">Premiere Pro</div>
-                <div class="bar-container">
-                    <div class="bar premiere">60%</div>
-                </div>
-            </div>
-
-            <div class="skill-bar">
-                <div class="skill-title">After Effects</div>
-                <div class="bar-container">
-                    <div class="bar aftereffects">75%</div>
-                </div>
-            </div>
-
-            <div class="skill-bar">
-                <div class="skill-title">Blender</div>
-                <div class="bar-container">
-                    <div class="bar blender">70%</div>
-                </div>
-            </div>
-
-            <div class="skill-bar">
-                <div class="skill-title">드론 조종</div>
-                <div class="bar-container">
-                    <div class="bar drone">50%</div>
-                </div>
-            </div>
-        </div>
     </div>
 
     <script>
+        // 스킬 섹션으로 이동하는 함수
+        function scrollToSection(id) {
+            document.getElementById(id).scrollIntoView({ behavior: 'smooth' });
+        }
+
         // 한국어와 영어 텍스트 데이터
         const translations = {
             en: {
