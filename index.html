@@ -5,6 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ACCUMSYNTH PORTFOLIO</title>
     <style>
+        /* CSS로 텍스트 선택 비활성화 */
+        body {
+            -webkit-user-select: none; /* Chrome, Safari */
+            -moz-user-select: none; /* Firefox */
+            -ms-user-select: none; /* IE 10+ */
+            user-select: none; /* Standard */
+        }
+
         /* 기본 다크 모드 */
         html, body {
             overflow: hidden;
@@ -185,7 +193,6 @@
     <!-- 버튼을 상단에 고정 -->
     <div class="button-container">
         <button class="animated-button ripple-button" id="darkModeToggle">라이트 모드</button>
-        <button class="animated-button ripple-button" id="languageToggle">Korean</button>
     </div>
     
     <!-- 메인 콘텐츠 -->
@@ -195,7 +202,7 @@
     </div>
     
     <!-- 스킬 섹션 -->
-    <div class="section skills">
+    <div class="section skills" id="skills">
         <h2>My Skills</h2>
         
         <!-- 코딩 언어 -->
@@ -307,57 +314,32 @@
     </div>
 
     <script>
+        // 우클릭 비활성화
+        document.addEventListener('contextmenu', function(event) {
+            event.preventDefault();
+        });
+
+        // 텍스트 선택 비활성화
+        document.addEventListener('selectstart', function(event) {
+            event.preventDefault();
+        });
+
+        // 드래그 비활성화
+        document.addEventListener('dragstart', function(event) {
+            event.preventDefault();
+        });
+        
         // 스킬 섹션으로 이동하는 함수
         function scrollToSection(id) {
             document.getElementById(id).scrollIntoView({ behavior: 'smooth' });
         }
 
-        // 한국어와 영어 텍스트 데이터
-        const translations = {
-            en: {
-                title: "ACCUMSAN",
-                description: "Welcome to the ACCUMSAN portfolio. This page is responsive, with a toggleable dark and light mode. Adjust the size of your screen to see how it adapts!",
-                buttonText: "Korean"
-            },
-            ko: {
-                title: "ACCUMSAN",
-                description: "ACCUMSAN 포트폴리오에 오신 것을 환영합니다. 이 페이지는 반응형으로, 다크 및 라이트 모드를 전환할 수 있습니다. 화면 크기에 따라 어떻게 조정되는지 확인해 보세요!",
-                buttonText: "English"
-            }
-        };
-
-        // 현재 언어 상태
-        let currentLanguage = 'en';
-
-        // 텍스트 요소 참조
-        const titleElement = document.getElementById("title");
-        const descriptionElement = document.getElementById("description");
-        const languageToggleButton = document.getElementById("languageToggle");
+        // 다크모드 토글 함수
         const darkModeToggle = document.getElementById("darkModeToggle");
-
-        // 언어 변경 함수
-        function toggleLanguage() {
-            currentLanguage = currentLanguage === 'en' ? 'ko' : 'en';
-            titleElement.innerText = translations[currentLanguage].title;
-            descriptionElement.innerText = translations[currentLanguage].description;
-            languageToggleButton.innerText = translations[currentLanguage].buttonText;
-        }
-
-        // 테마 변경 함수
-        function toggleDarkMode() {
+        darkModeToggle.addEventListener('click', function() {
             document.body.classList.toggle('dark-mode');
-            if (document.body.classList.contains('dark-mode')) {
-                darkModeToggle.innerText = "라이트 모드";
-            } else {
-                darkModeToggle.innerText = "다크 모드";
-            }
-        }
-
-        // 다크모드 토글 버튼에 이벤트 추가
-        darkModeToggle.addEventListener('click', toggleDarkMode);
-
-        // 언어 변경 버튼 클릭 시 언어 변경 함수 호출
-        languageToggleButton.addEventListener("click", toggleLanguage);
+            darkModeToggle.innerText = document.body.classList.contains('dark-mode') ? "라이트 모드" : "다크 모드";
+        });
     </script>
 </body>
 </html>
