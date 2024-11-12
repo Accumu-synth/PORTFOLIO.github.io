@@ -15,8 +15,7 @@
 
         /* 기본 다크 모드 */
         html, body {
-            overflow: hidden;
-            height: 100%;
+            overflow-x: hidden;
             margin: 0;
             padding: 0;
             transition: background-color 0.6s ease, color 0.6s ease; /* 부드러운 전환 추가 */
@@ -126,7 +125,7 @@
 
         /* 스킬 섹션 스타일 */
         .skills {
-            width: 80%;
+            width: 100%;
             margin: auto;
             margin-top: 50px;
         }
@@ -175,15 +174,13 @@
 
         .skills-container {
             display: flex;
-            justify-content: space-around;
             flex-wrap: wrap;
             width: 100%;
-            margin-top: 50px;
+            justify-content: center;
         }
 
         .skill-category {
-            flex: 1;
-            min-width: 250px; /* 최소 너비 설정 */
+            flex: 1 1 250px; /* 최소 너비 설정 */
             margin: 20px;
         }
 
@@ -202,6 +199,45 @@
         .protopie { width: 0%; background-color: #ff4d4d; }
         .drone { width: 30%; background-color: #4caf50; }
 
+        /* 모바일 스타일 */
+        @media (max-width: 768px) {
+            #title {
+                font-size: 50px;
+            }
+            
+            #description {
+                font-size: 20px;
+            }
+            
+            .skills h2 {
+                font-size: 28px;
+            }
+
+            .button-container, .top-left-button {
+                top: 5px;
+                font-size: 14px;
+            }
+
+            .back-to-main-button {
+                font-size: 14px;
+                padding: 8px 12px;
+            }
+
+            .animated-button {
+                font-size: 14px;
+                padding: 8px 12px;
+            }
+
+            .skills-container {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .skill-category {
+                width: 100%;
+                margin: 10px 0;
+            }
+        }
     </style>
 </head>
 <body> 
