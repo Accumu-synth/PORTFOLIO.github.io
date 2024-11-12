@@ -15,27 +15,26 @@
 
         /* 기본 다크 모드 */
         html, body {
-            overflow: hidden;
-            height: 100%;
+            overflow-x: hidden;
             margin: 0;
             padding: 0;
+            transition: background-color 0.6s ease, color 0.6s ease; /* 부드러운 전환 추가 */
         }
 
         body {
             background-color: #1e1e1e;
             color: #ffffff;
-            transition: background-color 0.3s, color #ffffff;
             font-family: Arial, sans-serif;
             padding: 20px;
         }
 
         .section {
-            min-height: calc(100vh - 40px);
+            height: calc(100vh - 60px);
             display: flex;
             flex-direction: column;
             align-items: center;
             justify-content: center;
-            padding: 20px;
+            padding: 10px;
         }
 
         /* 화이트 모드 스타일 */
@@ -126,7 +125,7 @@
 
         /* 스킬 섹션 스타일 */
         .skills {
-            width: 80%;
+            width: 100%;
             margin: auto;
             margin-top: 50px;
         }
@@ -175,15 +174,13 @@
 
         .skills-container {
             display: flex;
-            justify-content: space-around;
             flex-wrap: wrap;
             width: 100%;
-            margin-top: 50px;
+            justify-content: center;
         }
 
         .skill-category {
-            flex: 1;
-            min-width: 250px; /* 최소 너비 설정 */
+            flex: 1 1 250px; /* 최소 너비 설정 */
             margin: 20px;
         }
 
@@ -202,6 +199,45 @@
         .protopie { width: 0%; background-color: #ff4d4d; }
         .drone { width: 30%; background-color: #4caf50; }
 
+        /* 모바일 스타일 */
+        @media (max-width: 768px) {
+            #title {
+                font-size: 50px;
+            }
+            
+            #description {
+                font-size: 20px;
+            }
+            
+            .skills h2 {
+                font-size: 28px;
+            }
+
+            .button-container, .top-left-button {
+                top: 5px;
+                font-size: 14px;
+            }
+
+            .back-to-main-button {
+                font-size: 14px;
+                padding: 8px 12px;
+            }
+
+            .animated-button {
+                font-size: 14px;
+                padding: 8px 12px;
+            }
+
+            .skills-container {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .skill-category {
+                width: 100%;
+                margin: 10px 0;
+            }
+        }
     </style>
 </head>
 <body> 
@@ -223,10 +259,10 @@
     <div class="section skills" id="skills">
         <h2>My Skills</h2>
         
-        <!-- 코딩 언어 -->
+        <!-- 프로그래밍 언어 -->
         <div class="skills-container">
             <div class="skill-category">
-                <h3>코딩 언어</h3>
+                <h3>프로그래밍 언어</h3>
                 
                 <div class="skill-bar">
                     <div class="skill-title">HTML</div>
@@ -274,27 +310,6 @@
                         <div class="bar indesign">65%</div>
                     </div>
                 </div>
-
-                <div class="skill-bar">
-                    <div class="skill-title">Figma</div>
-                    <div class="bar-container">
-                        <div class="bar figma">0%</div>
-                    </div>
-                </div>
-
-                <div class="skill-bar">
-                    <div class="skill-title">Framer</div>
-                    <div class="bar-container">
-                        <div class="bar framer">0%</div>
-                    </div>
-                </div>
-
-                <div class="skill-bar">
-                    <div class="skill-title">ProtoPie</div>
-                    <div class="bar-container">
-                        <div class="bar protopie">0%</div>
-                    </div>
-                </div>
             </div>
             
             <!-- 영상 -->
@@ -321,11 +336,37 @@
                         <div class="bar blender">50%</div>
                     </div>
                 </div>
-
+            
                 <div class="skill-bar">
                     <div class="skill-title">드론 촬영</div>
                     <div class="bar-container">
                         <div class="bar drone">30%</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 프로토타이핑 -->
+            <div class="skill-category">
+                <h3>프로토타이핑</h3>
+            
+                <div class="skill-bar">
+                    <div class="skill-title">Figma</div>
+                    <div class="bar-container">
+                        <div class="bar figma">0%</div>
+                    </div>
+                </div>
+
+                <div class="skill-bar">
+                    <div class="skill-title">Framer</div>
+                    <div class="bar-container">
+                        <div class="bar framer">0%</div>
+                    </div>
+                </div>
+
+                <div class="skill-bar">
+                    <div class="skill-title">ProtoPie</div>
+                    <div class="bar-container">
+                        <div class="bar protopie">0%</div>
                     </div>
                 </div>
             </div>
