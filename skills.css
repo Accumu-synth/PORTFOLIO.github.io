@@ -1,0 +1,76 @@
+/* 스킬 섹션 스타일 */
+.skills {
+    width: 100%;
+    margin: auto;
+    margin-top: 50px;
+}
+
+.skills h2 {
+    text-align: center;
+    font-size: 36px;
+    margin-bottom: 20px;
+}
+
+.skill-category {
+    margin-top: 30px;
+}
+
+.skill-category h3 {
+    font-size: 24px;
+    margin-bottom: 15px;
+    color: #ffcc00;
+}
+
+.skill-bar {
+    margin-bottom: 15px;
+}
+
+.skill-title {
+    font-size: 16px;
+    margin-bottom: 5px;
+}
+
+.bar-container {
+    background-color: #333;
+    border-radius: 5px;
+    overflow: hidden;
+    height: 25px;
+}
+
+.bar {
+    height: 100%;
+    text-align: right;
+    padding-right: 10px;
+    color: white;
+    font-weight: bold;
+    line-height: 25px;
+    border-radius: 5px;
+}
+
+.skills-container {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    justify-content: center;
+}
+
+.skill-category {
+    flex: 1 1 250px; /* 최소 너비 설정 */
+    margin: 20px;
+}
+
+/* 스킬별 색상 */
+.html { width: 20%; background-color: #e44d26; }
+.css { width: 10%; background-color: #264de4; }
+.javascript { width: 5%; background-color: #f0db4f; color: #333; }
+.photoshop { width: 60%; background-color: #31a8ff; }
+.illustrator { width: 80%; background-color: #ff9a00; }
+.indesign { width: 65%; background-color: #ff3366; }
+.premiere { width: 70%; background-color: #e535ab; }
+.aftereffects { width: 80%; background-color: #9999ff; }
+.blender { width: 50%; background-color: #f87e0c; }
+.figma { width: 0%; background-color: #a259ff; }
+.framer { width: 0%; background-color: #007acc; }
+.protopie { width: 0%; background-color: #ff4d4d; }
+.drone { width: 30%; background-color: #4caf50; }
+.camear { width: 40%; background-color: #31c0c5;}

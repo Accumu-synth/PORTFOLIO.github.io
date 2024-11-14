@@ -1,0 +1,166 @@
+/* 모든 기종 사이즈 */
+
+/*  */
+
+/* 아이폰 */
+
+    /* iPhone 4, 4s (3.5" - 320px x 480px) */
+    @media only screen and (device-width: 320px) and (device-height: 480px) {
+        /* 스타일 정의 */
+    }
+
+    /* iPhone 5, 5s, 5c, SE (4.0" - 320px x 568px) */
+    @media only screen and (device-width: 320px) and (device-height: 568px) {
+        /* 스타일 정의 */
+    }
+
+    /* iPhone 6, 6s, 7, 8 (4.7" - 375px x 667px) */
+    @media only screen and (device-width: 375px) and (device-height: 667px) {
+        /* 스타일 정의 */
+    }
+
+    /* iPhone 6 Plus, 6s Plus, 7 Plus, 8 Plus (5.5" - 414px x 736px) */
+    @media only screen and (device-width: 414px) and (device-height: 736px) {
+        /* 스타일 정의 */
+    }
+
+    /* iPhone X, XS, 11 Pro (5.8" - 375px x 812px) */
+    @media only screen and (device-width: 375px) and (device-height: 812px) {
+        /* 스타일 정의 */
+    }
+
+    /* iPhone XR, 11 (6.1" - 414px x 896px) */
+    @media only screen and (device-width: 414px) and (device-height: 896px) {
+        /* 스타일 정의 */
+    }
+
+    /* iPhone XS Max, 11 Pro Max (6.5" - 414px x 896px) */
+    @media only screen and (device-width: 414px) and (device-height: 896px) {
+        /* 스타일 정의 */
+    }
+
+    /* iPhone 12 mini, 13 mini (5.4" - 360px x 780px) */
+    @media only screen and (device-width: 360px) and (device-height: 780px) {
+        /* 스타일 정의 */
+    }
+
+    /* iPhone 12, 12 Pro, 13, 13 Pro, 14 (6.1" - 390px x 844px) */
+    @media only screen and (device-width: 390px) and (device-height: 844px) {
+        /* 스타일 정의 */
+    }
+
+    /* iPhone 12 Pro Max, 13 Pro Max, 14 Plus (6.7" - 430px x 932px) */
+    @media only screen and (device-width: 430px) and (device-height: 932px) {
+        /* 스타일 정의 */
+    }
+
+    /* iPhone 14 Pro (6.1" - 393px x 852px) */
+    @media only screen and (device-width: 393px) and (device-height: 852px) {
+        /* 스타일 정의 */
+    }
+
+    /* iPhone 14 Pro Max (6.7" - 430px x 932px) */
+    @media only screen and (device-width: 430px) and (device-height: 932px) {
+        /* 스타일 정의 */
+    }
+
+    /* iPhone 15, 15 Pro (6.1" - 393px x 852px) */
+    @media only screen and (device-width: 393px) and (device-height: 852px) {
+        /* 스타일 정의 */
+    }
+
+    /* iPhone 15 Plus, 15 Pro Max (6.7" - 430px x 932px) */
+    @media only screen and (device-width: 430px) and (device-height: 932px) {
+        /* 스타일 정의 */
+    }
+
+
+
+
+/* 삼성 */
+
+    /* Galaxy S5 (5.1" - 360px x 640px) */
+    @media only screen and (device-width: 360px) and (device-height: 640px) {
+        /* 스타일 정의 */
+    }
+
+    /* Galaxy S6, S7, S8, S9 (5.1" - 360px x 640px / 5.8" - 360px x 740px) */
+    @media only screen and (device-width: 360px) and (device-height: 740px) {
+        /* 스타일 정의 */
+    }
+
+    /* Galaxy S10 (6.1" - 360px x 760px) */
+    @media only screen and (device-width: 360px) and (device-height: 760px) {
+        /* 스타일 정의 */
+    }
+
+    /* Galaxy S20, S21 (6.2" - 412px x 915px) */
+    @media only screen and (device-width: 412px) and (device-height: 915px) {
+        /* 스타일 정의 */
+    }
+
+    /* Galaxy S20+, S21+ (6.7" - 412px x 915px) */
+    @media only screen and (device-width: 412px) and (device-height: 915px) {
+        /* 스타일 정의 */
+    }
+
+    /* Galaxy S20 Ultra, S21 Ultra, S22 Ultra (6.9" - 412px x 915px) */
+    @media only screen and (device-width: 412px) and (device-height: 915px) {
+        /* 스타일 정의 */
+    }
+
+    /* Galaxy S22, S23 (6.1" - 370px x 800px) */
+    @media only screen and (device-width: 370px) and (device-height: 800px) {
+        /* 스타일 정의 */
+    }
+
+    /* Galaxy S22+, S23+ (6.6" - 412px x 915px) */
+    @media only screen and (device-width: 412px) and (device-height: 915px) {
+        /* 스타일 정의 */
+    }
+
+    /* Galaxy Note 9 (6.4" - 412px x 846px) */
+    @media only screen and (device-width: 412px) and (device-height: 846px) {
+        /* 스타일 정의 */
+    }
+
+    /* Galaxy Note 10 (6.3" - 412px x 869px) */
+    @media only screen and (device-width: 412px) and (device-height: 869px) {
+        /* 스타일 정의 */
+    }
+
+    /* Galaxy Note 10+ (6.8" - 412px x 869px) */
+    @media only screen and (device-width: 412px) and (device-height: 869px) {
+        /* 스타일 정의 */
+    }
+
+    /* Galaxy Z Fold 3 (7.6" unfolded - 768px x 1024px) */
+    @media only screen and (device-width: 768px) and (device-height: 1024px) {
+        /* 스타일 정의 */
+    }
+
+    /* Galaxy Z Fold 4 (7.6" unfolded - 904px x 1216px) */
+    @media only screen and (device-width: 904px) and (device-height: 1216px) {
+        /* 스타일 정의 */
+    }
+
+    /* Galaxy Z Flip 3, 4 (6.7" - 412px x 915px) */
+    @media only screen and (device-width: 412px) and (device-height: 915px) {
+        /* 스타일 정의 */
+    }
+
+    /* Galaxy A50, A51 (6.4" - 412px x 869px) */
+    @media only screen and (device-width: 412px) and (device-height: 869px) {
+        /* 스타일 정의 */
+    }
+
+    /* Galaxy A71 (6.7" - 412px x 914px) */
+    @media only screen and (device-width: 412px) and (device-height: 914px) {
+        /* 스타일 정의 */
+    }
+
+    /* Galaxy A52, A53 (6.5" - 412px x 915px) */
+    @media only screen and (device-width: 412px) and (device-height: 915px) {
+        /* 스타일 정의 */
+    }
+
