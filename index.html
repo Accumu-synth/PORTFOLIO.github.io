@@ -5,11 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MUNSUMIN PORTFOLIO</title>
     <link rel="stylesheet" href="bass_styles.css">
+    <link rel="stylesheet" href="responsive.css">
+    <link rel="stylesheet" href="skills.css">
+
 </head>
 <body> 
-     <!-- 왼쪽 상단에 스킬로 이동 버튼 추가 -->
-     <button class="top-left-button" onclick="scrollToSection('skills')">스킬로 이동</button>
-    
+    <!-- 왼쪽 상단에 스킬로 이동 버튼 추가 -->
+    <a href="skills.html" class="top-left-button" onclick="goToSkillsPage(event)">스킬로 이동</a>
+
     <!-- 버튼을 상단에 고정 -->
     <div class="button-container">
         <button class="animated-button ripple-button" id="darkModeToggle">라이트 모드</button>
@@ -21,126 +24,7 @@
         <p id="description">This is a personal portfolio site.</p>
     </div>
     
-    <!-- 스킬 섹션 -->
-    <div class="section skills" id="skills">
-        <h2>My Skills</h2>
-        
-        <!-- 프로그래밍 언어 -->
-        <div class="skills-container">
-            <div class="skill-category">
-                <h3>프로그래밍 언어</h3>
-                
-                <div class="skill-bar">
-                    <div class="skill-title">HTML</div>
-                    <div class="bar-container">
-                        <div class="bar html">20%</div>
-                    </div>
-                </div>
-
-                <div class="skill-bar">
-                    <div class="skill-title">CSS</div>
-                    <div class="bar-container">
-                        <div class="bar css">10%</div>
-                    </div>
-                </div>
-
-                <div class="skill-bar">
-                    <div class="skill-title">JavaScript</div>
-                    <div class="bar-container">
-                        <div class="bar javascript">5%</div>
-                    </div>
-                </div>
-            </div>
-            
-            <!-- 디자인 -->
-            <div class="skill-category">
-                <h3>디자인</h3>
-                
-                <div class="skill-bar">
-                    <div class="skill-title">Photoshop</div>
-                    <div class="bar-container">
-                        <div class="bar photoshop">60%</div>
-                    </div>
-                </div>
-
-                <div class="skill-bar">
-                    <div class="skill-title">Illustrator</div>
-                    <div class="bar-container">
-                        <div class="bar illustrator">80%</div>
-                    </div>
-                </div>
-
-                <div class="skill-bar">
-                    <div class="skill-title">InDesign</div>
-                    <div class="bar-container">
-                        <div class="bar indesign">65%</div>
-                    </div>
-                </div>
-            </div>
-            
-            <!-- 영상 -->
-            <div class="skill-category">
-                <h3>영상</h3>
-                
-                <div class="skill-bar">
-                    <div class="skill-title">Premiere Pro</div>
-                    <div class="bar-container">
-                        <div class="bar premiere">70%</div>
-                    </div>
-                </div>
-
-                <div class="skill-bar">
-                    <div class="skill-title">After Effects</div>
-                    <div class="bar-container">
-                        <div class="bar aftereffects">80%</div>
-                    </div>
-                </div>
-
-                <div class="skill-bar">
-                    <div class="skill-title">Blender</div>
-                    <div class="bar-container">
-                        <div class="bar blender">50%</div>
-                    </div>
-                </div>
-            
-                <div class="skill-bar">
-                    <div class="skill-title">드론 촬영</div>
-                    <div class="bar-container">
-                        <div class="bar drone">30%</div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- 프로토타이핑 -->
-            <div class="skill-category">
-                <h3>프로토타이핑</h3>
-            
-                <div class="skill-bar">
-                    <div class="skill-title">Figma</div>
-                    <div class="bar-container">
-                        <div class="bar figma">0%</div>
-                    </div>
-                </div>
-
-                <div class="skill-bar">
-                    <div class="skill-title">Framer</div>
-                    <div class="bar-container">
-                        <div class="bar framer">0%</div>
-                    </div>
-                </div>
-
-                <div class="skill-bar">
-                    <div class="skill-title">ProtoPie</div>
-                    <div class="bar-container">
-                        <div class="bar protopie">0%</div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- 메인으로 돌아가는 버튼 -->
-        <button class="back-to-main-button" onclick="scrollToSection('main')">메인으로 돌아가기</button>
-    </div>
+    <div id="skills-content"></div>
 
     <script src="bass_script.js"></script>
 </body>
